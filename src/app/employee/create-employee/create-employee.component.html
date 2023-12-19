@@ -1,0 +1,99 @@
+<div class="form-container">
+  <h2>Thêm người dùng mới</h2>
+  <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+    <label [ngClass]="{'has-error' : formErrors['full_name']}">
+      Full Name:
+      <input type="text" placeholder="Nhập full_name" formControlName="full_name" (blur)="logValidationError()">
+    </label>
+    <div>
+      <span class="error-message" *ngIf="formErrors['full_name']">
+        {{formErrors['full_name']}}
+      </span>
+    </div>
+    <br><br>
+    <label [ngClass]="{'has-error' : formErrors['email']}">
+      Email:
+      <input type="email" placeholder="Nhập email" formControlName="email" (blur)="logValidationError()">
+    </label>
+    <div>
+      <span class="error-message" *ngIf="formErrors['email']">
+        {{formErrors['email']}}
+      </span>
+    </div>
+    <br><br>
+    <label [ngClass]="{'has-error' : formErrors['phone']}">
+      Phone:
+      <input type="number" placeholder="Nhập số điện thoại" formControlName="phone" (blur)="logValidationError()">
+    </label>
+    <div>
+      <span class="error-message" *ngIf="formErrors['phone']">
+        {{formErrors['phone']}}
+      </span>
+    </div>
+    <br><br>
+    <label [ngClass]="{'has-error' : formErrors['address']}">
+      Address:
+      <input type="address" placeholder="Nhập dia chi" formControlName="address" (blur)="logValidationError()">
+    </label>
+    <div>
+      <span class="error-message" *ngIf="formErrors['address']">
+        {{formErrors['address']}}
+      </span>
+    </div>
+    <br><br>
+    <label [ngClass]="{'has-error' : formErrors['job_type']}">
+      Job:
+      <input type="number" placeholder="Nhập job_type" formControlName="job_type" (blur)="logValidationError()">
+    </label>
+    <div>
+      <span class="error-message" *ngIf="formErrors['job_type']">
+        {{formErrors['job_type']}}
+      </span>
+    </div>
+    <br><br>
+    <div formGroupName="employeeDocs">
+      <label [ngClass]="{'has-error' : formErrors['joining_date']}">
+        Joining_date:
+        <input type="date" placeholder="Nhập Joining_date" formControlName="joining_date" (blur)="logValidationError()">
+      </label>
+      <div>
+        <span class="error-message" *ngIf="formErrors['joining_date']">
+          {{formErrors['joining_date']}}
+        </span>
+      </div>
+      <br><br>
+      <label [ngClass]="{'has-error' : formErrors['id_card']}">
+        Id_card:
+        <input type="number" placeholder="Nhập số id_card" formControlName="id_card" (blur)="logValidationError()">
+      </label>
+      <div>
+        <span class="error-message" *ngIf="formErrors['id_card']">
+          {{formErrors['id_card']}}
+        </span>
+      </div>
+      <br><br>
+      <label [ngClass]="{'has-error' : formErrors['bank_account']}">
+        Bank_account:
+        <input type="number" placeholder="Nhập số bank_account" formControlName="bank_account"
+          (blur)="logValidationError()">
+      </label>
+      <div>
+        <span class="error-message" *ngIf="formErrors['bank_account']">
+          {{formErrors['bank_account']}}
+        </span>
+      </div>
+      <br><br>
+      <label [ngClass]="{'has-error' : formErrors['bank_account_info']}">
+        Bank_name:
+        <input type="text" placeholder="Nhập tên bank_account_info" formControlName="bank_account_info"
+          (blur)="logValidationError()">
+      </label>
+      <div>
+        <span class="error-message" *ngIf="formErrors['bank_account_info']">
+          {{formErrors['bank_account_info']}}
+        </span>
+      </div>
+    </div>
+    <button type="submit" [disabled]="employeeForm.invalid">Thêm người dùng</button>
+  </form>
+</div>

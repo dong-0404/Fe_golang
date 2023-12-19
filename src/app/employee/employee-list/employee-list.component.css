@@ -1,0 +1,121 @@
+/* Định dạng trang web chính */
+main {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Định dạng bảng */
+  #userTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  #userTable th, #userTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  #userTable th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Định dạng nút bấm */
+  button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #ff5733; /* Thay đổi màu này thành màu bạn muốn */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  button.btn-primary:hover {
+    background-color: red;
+  }
+  
+  /* Định dạng phân trang */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .pagination button {
+    padding: 10px 20px;
+    margin: 0 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .pagination button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Hiển thị tổng số trang */
+  .total-pages {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 18px;
+  }
+  /* Màu sắc cho nút bấm có class .ViewBtn */
+button.ViewBtn {
+    background-color: #3498db; /* Màu sắc cho nút View */
+    color: #fff;
+  }
+button.btn-primary {
+  background-color: #3498db;
+  color: #fff;
+}
+  
+  button.ViewBtn:hover {
+    background-color: #2980b9; /* Màu sắc khi di chuột qua */
+  }
+  
+  /* Màu sắc cho nút bấm có class .editBtn */
+  button.editBtn {
+    background-color: #2ecc71; /* Màu sắc cho nút Edit */
+    color: #fff;
+  }
+  
+  button.editBtn:hover {
+    background-color: #27ae60; /* Màu sắc khi di chuột qua */
+  }
+  
+  /* Màu sắc cho nút bấm có class .deleteBtn */
+  button.deleteBtn {
+    background-color: #e74c3c; /* Màu sắc cho nút Delete */
+    color: #fff;
+  }
+  
+  button.deleteBtn:hover {
+    background-color: #c0392b; /* Màu sắc khi di chuột qua */
+  }
+  
+  /* Màu sắc cho nút phân trang */
+  .pagination button {
+    background-color: #007bff; /* Màu sắc cho nút phân trang */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .pagination button:hover {
+    background-color: #e55028; /* Màu sắc khi di chuột qua */
+  }
+  
+  /* Màu sắc cho nút phân trang bị vô hiệu hóa */
+  .pagination button:disabled {
+    background-color: #ccc; /* Màu sắc khi nút bấm bị vô hiệu hóa */
+    cursor: not-allowed;
+  }
+  
+  

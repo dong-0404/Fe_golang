@@ -1,0 +1,46 @@
+/* CSS cho Modal Header */
+.modal-header {
+    background-color: #007bff;
+    color: #fff;
+    padding: 15px;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .modal-title {
+    margin: 0;
+  }
+  
+  /* CSS cho Modal Body */
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .form-container {
+    max-width: 600px; /* Điều chỉnh theo nhu cầu của bạn */
+    margin: 0 auto;
+  }
+  
+  /* CSS cho Form Controls */
+  .form-control {
+    margin-bottom: 15px;
+  }
+  
+  /* Căn chỉnh input và textarea bên trong form-control */
+  .form-control input,
+  .form-control textarea {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  /* CSS cho Modal Footer */
+  .modal-footer {
+    padding: 15px;
+    border-top: 1px solid #dee2e6;
+    display: flex;
+    justify-content: flex-end;
+  }
+  

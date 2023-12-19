@@ -1,0 +1,16 @@
+
+<div class="container">
+    <h2>Thông tin chi tiết nhân viên</h2>
+    <div *ngIf="employee">
+      <p><strong>Tên người dùng:</strong>{{employee.full_name}} </p>
+      <p><strong>Email:</strong>{{ employee.email }}</p>
+      <p><strong>Phone:</strong>{{ employee.phone }} </p>
+      <p><strong>Id Card:</strong>{{ employee.EmployeeDocs.id_card}} </p>
+      <p><strong>Bank Account:</strong>{{ employee.EmployeeDocs.bank_account }} </p>
+      <p><strong>Bank Name:</strong>{{ employee.EmployeeDocs.bank_account_info }} </p>
+      <p><strong>Joining Date:</strong>{{employee.EmployeeDocs.joining_date}}</p>
+      <!-- Thêm các thông tin khác của người dùng -->
+    </div>
+    <a routerLink="/Admin/listEmployees">Quay lại</a>
+  </div>
+  

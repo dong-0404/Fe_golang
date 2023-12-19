@@ -1,0 +1,54 @@
+<main>
+    <h2>List of CVs</h2>
+    <table id="userTable">
+        <tr>
+            <th>CV ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>university</th>
+            <th>Job Application</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let cv of CVs">
+            <td>{{cv.ID}}</td>
+            <td>{{cv.full_name}}</td>
+            <td>{{cv.PersonalInfo.email}}</td>
+            <td>{{cv.PersonalInfo.phone}}</td>
+            <td>{{cv.PersonalEducation.university}}</td>
+            <td>{{cv.JobType.name}}</td>
+            <td>{{cv.status}}</td>
+            <td>
+                <button [routerLink]="['/Cv/', cv.ID]" class="ViewBtn">View</button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#myModal" (click)="openEditPopup(cv.ID)" class="editBtn">Edit</button>
+                <button (click)="deleteCV(cv.ID)" class="deleteBtn">Delete</button>
+            </td>
+        </tr>
+        <button type="button" class="btn btn-primary" (click)="openCreatePopup()" data-bs-toggle="modal"
+            data-bs-target="#myModal">
+            Thêm mới CV
+        </button>
+    </table>
+</main>
+<!-- The Modal
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Create Employee</h4>
+                <button type="button" class="btn-close" (click)="closeModal('myModal')" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <app-create-employee></app-create-employee>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button1" class="btn btn-danger" (click)="closeModal('myModal')"
+                    data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div> -->

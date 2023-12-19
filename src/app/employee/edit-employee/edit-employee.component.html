@@ -1,0 +1,67 @@
+<!-- {{ employeeId | json }} -->
+<div class="modal-header">
+    <h4 class="modal-title">Edit Employee</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="form-container">
+        <h2>Cập nhật thông tin nhân viên</h2>
+        <form [formGroup]="employeeForm" (ngSubmit)="onSubmit()">
+            <div formGroupName="dataEmployee">
+                <div class="row g-3">
+                    <div class="col">
+                        <input type="text" class="form-control" formControlName="full_name" placeholder="full_name"
+                            aria-label="full_name">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" formControlName="email" placeholder="email"
+                            aria-label="email">
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col">
+                        <input type="number" class="form-control" formControlName="phone" placeholder="phone"
+                            aria-label="phone">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" formControlName="address" placeholder="address"
+                            aria-label="address">
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col">
+                        <input type="number" class="form-control" formControlName="job_type" placeholder="job_type"
+                            aria-label="job_type">
+                    </div>
+                </div>
+            </div>
+            <div formGroupName="dataEmployeeDocs">
+                <div class="row g-3">
+                    <div class="col">
+                        <input type="number" class="form-control" formControlName="id_card" placeholder="id_card"
+                            aria-label="id_card">
+                    </div>
+                    <div class="col">
+                        <input type="number" class="form-control" formControlName="bank_account"
+                            placeholder="bank_account" aria-label="bank_account">
+                    </div>
+                    <div class="col">
+                        <input type="date" class="form-control" formControlName="joining_date"
+                            placeholder="joining_date" aria-label="joining_date">
+                    </div>
+                </div>
+            </div>
+            <!-- Add the submit button -->
+            <div class="row">
+                <div class="col">
+                    <button type="submit" [disabled]="employeeForm.invalid" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">Close</button>
+</div>

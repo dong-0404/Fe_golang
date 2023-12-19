@@ -1,0 +1,24 @@
+/* Add this CSS to enhance the form styling */
+.row {
+    margin-bottom: 15px;
+}
+
+/* Style the form controls */
+.form-control {
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Add some spacing between columns */
+.col {
+    margin-bottom: 15px;
+}
+
+/* Add a subtle border around the form */
+.form-container {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

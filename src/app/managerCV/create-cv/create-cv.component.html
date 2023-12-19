@@ -1,0 +1,79 @@
+<!-- {{ employeeId | json }} -->
+<div class="modal-header">
+    <h4 class="modal-title">Edit Employee</h4>
+    <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="form-container">
+        <h2>Cập nhật thông tin nhân viên</h2>
+        <form [formGroup]="CvForm" (ngSubmit)="onSubmit()">
+            <div class="row g-3">
+                <div class="col">
+                    <input type="text" class="form-control" formControlName="full_name" placeholder="full_name"
+                        aria-label="full_name">
+                </div>
+                <div class="col">
+                    <input type="number" class="form-control" formControlName="job_id" placeholder="job_id"
+                        aria-label="job_id">
+                </div>
+            </div>
+            <div formGroupName="PersonalInfo">
+                <div class="row g-3">
+                    <div class="col">
+                        <input type="number" class="form-control" formControlName="phone" placeholder="phone"
+                            aria-label="phone">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" formControlName="address" placeholder="address"
+                            aria-label="address">
+                    </div>
+                </div>
+                <div class="row g-3">
+                    <div class="col">
+                        <input type="text" class="form-control" formControlName="email" placeholder="email"
+                            aria-label="email">
+                    </div>
+                </div>
+            </div>
+            <div formGroupName="PersonalEducation">
+                <div class="row g-3">
+                    <div class="col">
+                        <input type="text" class="form-control" formControlName="university" placeholder="university"
+                            aria-label="university">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" formControlName="language" placeholder="language"
+                            aria-label="language">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" formControlName="grade" placeholder="grade"
+                            aria-label="grade">
+                    </div>
+                </div>
+            </div>
+            <div formGroupName="PersonalProject">
+                <div class="row g-3">
+                    <div class="col">
+                        <input type="text" class="form-control" formControlName="skill" placeholder="skill"
+                            aria-label="skill">
+                    </div>
+                    <div class="col">
+                        <input type="text" class="form-control" formControlName="source" placeholder="source"
+                            aria-label="source">
+                    </div>
+                </div>
+            </div>
+            <!-- Add the submit button -->
+            <div class="row">
+                <div class="col">
+                    <button type="submit" [disabled]="CvForm.invalid" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss()">Close</button>
+</div>

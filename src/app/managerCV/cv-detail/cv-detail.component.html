@@ -1,0 +1,14 @@
+<div class="container">
+    <h2>Thông tin chi tiết CV</h2>
+    <div *ngIf="CV">
+      <p><strong>Name:</strong>{{CV.full_name}} </p>
+      <p><strong>Email:</strong>{{ CV.PersonalInfo.email }}</p>
+      <p><strong>University:</strong>{{ CV.PersonalEducation.university }}</p>
+      <p><strong>Job Application:</strong>{{ CV.JobType.name}} </p>
+      <p><strong>Skill:</strong>{{ CV.PersonalProject.skill }} </p>
+      <p><strong>Status:</strong>{{ CV.status }} </p>
+      <p><strong>Source Code:</strong>{{CV.PersonalProject.source}}</p>
+      <p><strong>Language:</strong>{{CV.PersonalEducation.language}}</p>
+    </div>
+    <a routerLink="/Admin/listCVs">Quay lại</a>
+  </div>

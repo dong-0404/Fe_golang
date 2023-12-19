@@ -1,0 +1,54 @@
+<main>
+    <h2>List of Users</h2>
+    <table id="userTable">
+        <tr>
+            <th>Employee ID</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Job</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.ID}}</td>
+            <td>{{employee.full_name}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.phone}}</td>
+            <td>{{employee.address}}</td>
+            <td>{{employee.JobType.name}}</td>
+            <td>{{employee.status_id}}</td>
+            <td>
+                <button [routerLink]="['/Employee/', employee.ID]" class="ViewBtn">View</button>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#myModal" (click)="openEditPopup(employee.ID)" class="editBtn">Edit</button>
+                <button (click)="deleteEmployee(employee.ID)" class="deleteBtn">Delete</button>
+            </td>
+        </tr>
+        <button type="button" class="btn btn-primary" (click)="openModal('myModal')" data-bs-toggle="modal"
+            data-bs-target="#myModal">
+            Thêm mới employee
+        </button>
+    </table>
+</main>
+<!-- The Modal -->
+<div class="modal" id="myModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Create Employee</h4>
+                <button type="button" class="btn-close" (click)="closeModal('myModal')" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body">
+                <app-create-employee></app-create-employee>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button1" class="btn btn-danger" (click)="closeModal('myModal')"
+                    data-bs-dismiss="modal">Close</button>
+            </div>
+
+        </div>
+    </div>
+</div>
