@@ -1,6 +1,8 @@
+import { employeeDocs } from "./employeeDocs.interface";
+
 export interface Employee {
-data(arg0: string, data: any): unknown;
-employeeDocs: any;
+// data(arg0: string, data: any): unknown;
+employeeDocs: employeeDocs[];
 joining_date: any;
 EmployeeDocs: any;
 JobType: any;

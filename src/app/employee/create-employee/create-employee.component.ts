@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators,FormArray } from '@angular/forms';
 import { EmployeeService } from '../employee.service';
 import { ToastrService } from 'ngx-toastr';
 
@@ -68,16 +68,26 @@ export class CreateEmployeeComponent implements OnInit{
         phone: ['', [Validators.required, Validators.maxLength(11)]],
         address: ['', [Validators.required]],
         job_type: ['', [Validators.required]],
-        employeeDocs: this.fb.group({
-          id_card: ['', [Validators.required]],
-          bank_account: ['', [Validators.required]],
-          bank_account_info: ['', [Validators.required]],
-          joining_date: ['', [Validators.required]]
-        })
+        employeeDocs: this.fb.array([
+          // id_card: ['', [Validators.required]],
+          // bank_account: ['', [Validators.required]],
+          // bank_account_info: ['', [Validators.required]],
+          // joining_date: ['', [Validators.required]]
+          this.addEmployeeDoc(),
+        ])
       } );
       this.employeeForm.valueChanges.subscribe((data) => {
         this.logValidationError(this.employeeForm)
       })
+    }
+
+    addEmployeeDoc() :FormGroup {
+      return this.fb.group({
+        id_card: ['', [Validators.required]],
+          bank_account: ['', [Validators.required]],
+          bank_account_info: ['', [Validators.required]],
+          joining_date: ['', [Validators.required]]
+    })
     }
 
     onSubmit(): void{
@@ -119,6 +129,13 @@ export class CreateEmployeeComponent implements OnInit{
               if (errorKey) {
                 this.formErrors[key] += message[errorKey] + ' ';
               }
+            }
+          }
+        }
+        if(abstractControl instanceof FormArray) {
+          for(const control of abstractControl.controls) {
+            if(control instanceof FormGroup) {
+          this.logValidationError(control)
             }
           }
         }
