@@ -1,0 +1,26 @@
+/* Thêm CSS cho modal */
+.modal-header {
+    background-color:  #fff; /* Màu đỏ, bạn có thể thay đổi theo ý muốn */
+    color: #dc3545; /* Màu chữ trắng */
+  }
+  
+  .modal-title {
+    margin: 0; /* Loại bỏ margin của tiêu đề */
+  }
+  
+  .modal-body {
+    padding: 20px; /* Thêm padding cho phần thân modal */
+  }
+  
+  .modal-footer {
+    justify-content: space-between; /* Các nút sẽ cách nhau ra hai đầu */
+    justify-content: right; /* Các nút sẽ dich sang ben phai */
+  }
+  
+  /* Thêm CSS cho cảnh báo màu đỏ */
+  .form-container {
+    color: #dc3545; /* Màu đỏ */
+    font-size: 18px; /* Kích thước chữ */
+    font-weight: bold; /* Chữ đậm */
+  }
+  

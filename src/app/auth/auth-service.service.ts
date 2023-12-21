@@ -21,4 +21,14 @@ export class AuthServiceService {
     });
   }
 
+  isLoggedIn(): boolean {
+    return !!localStorage.getItem('Authorization');
+  }
+
+  setToken(token:string) {
+    return localStorage.setItem('Authorization',token);
+  }
+
+  
+
 }

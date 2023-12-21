@@ -1,13 +1,13 @@
 <!-- {{ employeeId | json }} -->
 <div class="modal-header">
-    <h4 class="modal-title">Edit Employee</h4>
+    <h4 class="modal-title">Edit CV</h4>
     <button type="button" class="close" aria-label="Close" (click)="activeModal.dismiss()">
         <span aria-hidden="true">&times;</span>
     </button>
 </div>
 <div class="modal-body">
     <div class="form-container">
-        <h2>Cập nhật thông tin nhân viên</h2>
+        <h2>Cập nhật thông tin CV</h2>
         <form [formGroup]="CvForm" (ngSubmit)="onSubmit()">
             <div formGroupName="DataCv">
                 <div class="row g-3">

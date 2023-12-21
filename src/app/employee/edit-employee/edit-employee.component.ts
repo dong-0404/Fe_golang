@@ -6,6 +6,7 @@ import { EmployeeService } from '../employee.service';
 import { ToastrService } from 'ngx-toastr';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
+
 @Component({
   selector: 'app-edit-employee',
   templateUrl: './edit-employee.component.html',
@@ -47,14 +48,14 @@ export class EditEmployeeComponent implements OnInit {
         //kiem tra data output
         // console.log("eee", this.updateEmployee);
       
-        this.employeeForm["controls"]["dataEmployee"].patchValue(this.updateEmployee)
-        this.employeeForm["controls"]["dataEmployeeDocs"].patchValue(this.updateEmployee?.EmployeeDocs)
+        this.employeeForm.controls["dataEmployee"].patchValue(this.updateEmployee)
+        this.employeeForm.controls["dataEmployeeDocs"].patchValue(this.updateEmployee?.EmployeeDocs)
       })
     }
   }
 
   get activeModal() {
-    return this._NgbActiveModal;
+    return this._NgbActiveModal.dismiss();
   }
 
   onSubmit(): void {

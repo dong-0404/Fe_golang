@@ -56,7 +56,7 @@ export class EmployeeListComponent implements OnInit {
     // const employee = this.employees.find(emp => emp.ID === id);
   
     // if (employee) {
-      const modalRef = this.modalService.open(EditEmployeeComponent);
+      const modalRef = this.modalService.open(EditEmployeeComponent, {size : 'lg'});
       modalRef.componentInstance.employeeId = id;
     // }
 } 

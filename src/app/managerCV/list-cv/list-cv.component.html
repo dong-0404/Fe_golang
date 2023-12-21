@@ -1,5 +1,6 @@
 <main>
     <h2>List of CVs</h2>
+    <!-- {{ CVs | json}} -->
     <table id="userTable">
         <tr>
             <th>CV ID</th>
@@ -9,9 +10,10 @@
             <th>university</th>
             <th>Job Application</th>
             <th>Status</th>
+            <th>Approve</th>
             <th>Actions</th>
         </tr>
-        <tr *ngFor="let cv of CVs">
+        <tr *ngFor="let cv of CVs ;let i = index">
             <td>{{cv.ID}}</td>
             <td>{{cv.full_name}}</td>
             <td>{{cv.PersonalInfo.email}}</td>
@@ -19,6 +21,10 @@
             <td>{{cv.PersonalEducation.university}}</td>
             <td>{{cv.JobType.name}}</td>
             <td>{{cv.status}}</td>
+            <td>
+                <!-- {{ i }} -->
+                <input class="form-check-input" type="checkbox" [checked]="statusCV(cv.status)" (change)="onchangeCheckBox( i)">
+            </td>
             <td>
                 <button [routerLink]="['/Cv/', cv.ID]" class="ViewBtn">View</button>
                 <button type="button" data-bs-toggle="modal" data-bs-target="#myModal" (click)="openEditPopup(cv.ID)" class="editBtn">Edit</button>

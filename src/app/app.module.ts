@@ -28,6 +28,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { CvDetailComponent } from './managerCV/cv-detail/cv-detail.component';
+import { ResponseMessageComponent } from './Message/response-message/response-message.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { CvDetailComponent } from './managerCV/cv-detail/cv-detail.component';
     EditUserComponent,
     DashboardComponent,
     EmployeeDetailComponent,
-    CvDetailComponent
+    CvDetailComponent,
+    ResponseMessageComponent
   ],
   imports: [
     BrowserModule,

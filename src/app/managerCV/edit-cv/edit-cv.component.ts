@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { cv } from '../cv.interface';
 import { ManagerCvServiceService } from '../manager-cv-service.service';
+import { ListCvComponent } from '../list-cv/list-cv.component';
 
 
 @Component({
@@ -25,7 +26,7 @@ export class EditCvComponent implements OnInit {
     private fb: FormBuilder,
     private toastr: ToastrService,
     private _NgbActiveModal: NgbActiveModal,
-    private cvService: ManagerCvServiceService
+    private cvService: ManagerCvServiceService,
 
   ) {
     this.CvForm = this.fb.group({
@@ -57,10 +58,10 @@ export class EditCvComponent implements OnInit {
           // console.log(cv.data);
           // console.log(this.CvForm);
           this.updateCV = cv.data;
-          this.CvForm["controls"]["DataCv"].patchValue(this.updateCV);
-          this.CvForm["controls"]["DataEducation"].patchValue(this.updateCV?.PersonalEducation);
-          this.CvForm["controls"]["DataInfo"].patchValue(this.updateCV?.PersonalInfo);
-          this.CvForm["controls"]["DataProject"].patchValue(this.updateCV?.PersonalProject);
+          this.CvForm.controls["DataCv"].patchValue(this.updateCV);
+          this.CvForm.controls["DataEducation"].patchValue(this.updateCV?.PersonalEducation);
+          this.CvForm.controls["DataInfo"].patchValue(this.updateCV?.PersonalInfo);
+          this.CvForm.controls['DataProject'].patchValue(this.updateCV?.PersonalProject);
         })
       }
 

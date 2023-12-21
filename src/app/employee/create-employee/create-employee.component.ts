@@ -63,7 +63,7 @@ export class CreateEmployeeComponent implements OnInit{
 
     ngOnInit():void {
       this.employeeForm = this.fb.group({
-        full_name: ['', Validators.required,Validators.minLength(2),Validators.maxLength(10)],
+        full_name: ['', [Validators.required,Validators.minLength(2),Validators.maxLength(10)]],
         email: ['', [Validators.required, Validators.email]],
         phone: ['', [Validators.required, Validators.maxLength(11)]],
         address: ['', [Validators.required]],
@@ -111,7 +111,8 @@ export class CreateEmployeeComponent implements OnInit{
           this.logValidationError(abstractControl);
         } else {
           this.formErrors[key] = '';
-          if(abstractControl && !abstractControl.valid) {
+          if(abstractControl && !abstractControl.valid && 
+            (abstractControl.touched || abstractControl.dirty)) {
             const message = this.validationMessages[key];
 
             for(const errorKey in abstractControl.errors) {
